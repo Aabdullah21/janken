@@ -16,3 +16,11 @@ function getComputerChoice() {
     return computerChoice
 }
 
+function getPlayerChoice() {
+
+    let playerChoice;
+    while (playerChoice != 'paper' && playerChoice != 'rock' && playerChoice != 'scissors') {
+        playerChoice = prompt('Enter "paper" or "rock" or "scissors"').trim().toLowerCase();
+    }
+    return playerChoice
+}
