@@ -42,13 +42,15 @@ function playRound(playerSelection, computerSelection) {
 
     let result;
     if (playerSelection == computerSelection) {
-        result = 'It\'s draw!';
+        result = 'draw';
 
     } else if (isLose(playerSelection, computerSelection)) {
-        result = 'Bad luck! Computer wins!'
+        result = 'computer'
+
     } else {
-        result = 'Congratulations you win'
+        result = 'player'
     }
 
     return result;
 }
+
