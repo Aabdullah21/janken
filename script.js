@@ -32,3 +32,23 @@ function isLose(playerSelection, computerSelection) {
 
     return rockLose || paperLose || scissorsLose
 }
+
+function playRound(playerSelection, computerSelection) {
+
+    console.log(`Your choice is: ${playerSelection}`);
+    console.log(`Computer choice is: ${computerSelection}`);
+
+
+
+    let result;
+    if (playerSelection == computerSelection) {
+        result = 'It\'s draw!';
+
+    } else if (isLose(playerSelection, computerSelection)) {
+        result = 'Bad luck! Computer wins!'
+    } else {
+        result = 'Congratulations you win'
+    }
+
+    return result;
+}
