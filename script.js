@@ -24,3 +24,11 @@ function getPlayerChoice() {
     }
     return playerChoice
 }
+
+function isLose(playerSelection, computerSelection) {
+    rockLose = (playerSelection == 'rock' && computerSelection == 'paper');
+    paperLose = (playerSelection == 'paper' && computerSelection == 'scissors');
+    scissorsLose = (playerSelection == 'scissors' && computerSelection == 'rock');
+
+    return rockLose || paperLose || scissorsLose
+}
