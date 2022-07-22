@@ -54,3 +54,41 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
+function game() {
+    let playerSelection;
+    let computerSelection;
+    let playerWins = 0;
+    let computerWins = 0;
+
+    for (let i = 0; i < 5; i++) {
+        console.log(`Round ${i + 1}`);
+        playerSelection = getPlayerChoice();
+        computerSelection = getComputerChoice();
+        let winner = playRound(playerSelection, computerSelection);
+
+        if (winner == 'player') {
+            console.log(`Congratulations you won round ${i + 1}`);
+            playerWins++;
+        } else if (winner == 'computer') {
+            console.log(`Bad luck! Computer won round ${i + 1}`);
+            computerWins++;
+        } else {
+            console.log(`Round ${i + 1} is draw!`);
+        }
+
+    }
+
+    finalWinner(playerWins, computerWins);
+
+
+}
+
+function finalWinner(playerWins, computerWins) {
+    if (computerWins > playerWins) {
+        console.log('The winner is computer!');
+    } else if (playerWins > computerWins) {
+        console.log('Congratulations you won!');
+    } else {
+        console.log('It\'s draw!');
+    }
+}
